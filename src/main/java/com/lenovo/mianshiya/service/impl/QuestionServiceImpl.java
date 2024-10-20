@@ -206,6 +206,9 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question> i
             if(CollUtil.isNotEmpty(questionList)){
                 Set<Long> questionIdSet = questionList.stream().map(QuestionBankQuestion::getQuestionId).collect(Collectors.toSet());
                 queryWrapper.in("id",questionIdSet);
+            }else{
+                // 题库为空，返回空列表
+                return new Page<>(current,size,0);
             }
         }
 

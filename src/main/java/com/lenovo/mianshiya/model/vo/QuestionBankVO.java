@@ -61,7 +61,7 @@ public class QuestionBankVO implements Serializable {
     /**
      * 关联查询题库下的问题列表（分页）
      */
-    private Page<Question> questionPage;
+    private Page<QuestionVO> questionPage;
 
 
     /**
